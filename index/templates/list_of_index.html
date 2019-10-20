@@ -1,0 +1,48 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>felagas.com/Home</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+{% load static %}
+{% block page_content %}
+{% block content %}
+    {% if user.is_authenticated %}
+{#        <div id="top"></div>#}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">logout</a> </p>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">login</a>
+    {% endif %}
+{% endblock %}
+        {% if user.is_authenticated %}
+
+<h1>Models</h1>
+<div class="row">
+{% for index in indexs %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static index.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ index.name }}</h5>
+                <p class="card-text">{{ index.description }}</p>
+                <a href="{% url 'index_detail' index.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}{% endif %}
+</div>
+{% endblock %}
+{#<a href="#top" class="button">Top</a>#}
+</body>
+</html>
