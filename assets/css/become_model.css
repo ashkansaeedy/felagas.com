@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(226, 114, 48);
+    font-size: 17px;
+}
+.que {
+    font-size: 17px;
+    text-align: center;
+
+}
+
+.gohome {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+
+.nav-link {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+
+.center{
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+p {
+    color: darkslategrey;
+}
+
+body {
+    margin: 0px;
+    padding: 50px;
+}

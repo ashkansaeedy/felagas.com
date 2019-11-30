@@ -1,4 +1,5 @@
 {% load static from staticfiles %}
+{% load bootstrap4 %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,36 +7,62 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="../../media/faveicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>felagas.com/Home</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/list_index.css' %}">
 </head>
 <body>
 {% load static %}
 {% block page_content %}
 {% block content %}
-    {% if user.is_authenticated %}
-{#        <div id="top"></div>#}
+<div><a class="felagas-logo" href="">felagas modeling agency</a></div><span></span>
+{% if user.is_authenticated %}
+{#<div id="top"></div>#}
     Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">logout</a> </p>
+  <br><br><div class="" id="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'becomeamodel' %}">Become a Model!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+        </ul></div>
+<!-- 
+    <p><a href="{% url 'logout' %}">logout</a>
+
+    </p><div><a href="{% url 'profile' %}">Profile</a> </div>
+
+    <div><a href="{% url 'becomeamodel' %}">Become a model!</a> </div>
+ -->
     {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">login</a>
+    <div><p>You are not logged in, Please login:</p></div>
+    <div><ul class="navbar-nav">
+        <li class="login">
+          <a class="nav-link" href="{% url 'login' %}">LOGIN</a>
+      </li></ul>
+    </div>
     {% endif %}
 {% endblock %}
-        {% if user.is_authenticated %}
 
-<h1>Models</h1>
+
+{% if user.is_authenticated %}
+<!-- <div><h1>Models</h1></div> -->
 <div class="row">
 {% for index in indexs %}
     <div class="col-md-4">
         <div class="card mb-2">
             <img class="card-img-top" src="{% static index.image %}">
             <div class="card-body">
-                <h5 class="card-title">{{ index.name }}</h5>
-                <p class="card-text">{{ index.description }}</p>
+                <!-- <h5 class="card-title"></h5> -->
+                <!-- <p class="card-text">{{ index.description }}</p> -->
                 <a href="{% url 'index_detail' index.pk %}"
                    class="btn btn-primary">
-                    Read More
+                    {{ index.name }}
                 </a>
             </div>
         </div>
@@ -43,6 +70,12 @@
     {% endfor %}{% endif %}
 </div>
 {% endblock %}
-{#<a href="#top" class="button">Top</a>#}
+<!-- <a href="#top" class="button">Top</a> -->
+
 </body>
+<footer>
+  <div><p class="footer1">&copy; Copyright <strong>felagas.com</strong>, All Rights Reserved.</p></div>
+  <div class="footer2">
+  Designed by <a href="">felagas.com</a></div>
+</footer>
 </html>

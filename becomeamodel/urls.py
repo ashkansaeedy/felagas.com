@@ -3,6 +3,7 @@ from . import views
 #1 from .views import qualified_models
 
 urlpatterns =[
-    #1 path ('qualified/',qualified_models),
-    path('',views.becomeamodel, name='becomeamodel'),
+    # path ('nomodels/', disqualified_models, name='nomodels'),
+    # path ('models/', qualified_models, name='model'),
+    path('', views.becomeamodel, name='becomeamodel'),
 ]

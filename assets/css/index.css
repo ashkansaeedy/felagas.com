@@ -11,7 +11,30 @@ body {
 p {
     color: darkslategrey;
 }
+	
 
-.div {
+.navbar{
 
 }
+
+.navbar-nav{
+}
+
+.nav-item{
+	background: white;	
+}
+
+.nav-link{
+	background-color: : white;
+}
+
+
+
+
+
+
+
+
+
+
+

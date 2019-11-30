@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from index.models import Index
+from users.models import User
+
 
 def index_detail(request, pk):
     index = Index.objects.get(pk=pk)
