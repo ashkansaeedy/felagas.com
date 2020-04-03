@@ -1,0 +1,52 @@
+body {
+    background-color: burlywood;
+    font-size: 17px;
+}
+
+/* .col-md-3{
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+} */
+
+.nav-link {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+
+.center{
+    text-align: center;
+}
+
+body {
+    margin: 0px;
+    padding: 50px;
+}
+
+.gohome {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+
+.login {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}
+
+footer {
+    font-size: 12px;
+}
+
+.account-heading {
+    text-align: center;
+    color: black;
+    border: 1px solid burlywood;
+	background-color:rgb(230, 206, 128);
+}

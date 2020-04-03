@@ -1,0 +1,42 @@
+{% load static from staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="../../media/faveicon.png" rel="icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Become a model</title>
+    <link rel="stylesheet" href="{% static 'css/become_model.css' %}">
+</head>
+<body>
+<div><p>
+    Please Insert Your Height(cm) and Weight(kg)  
+</p></div>
+<div>
+    <input type="number" id="hei" value="x">
+    <!-- <input type="number" id="wei" value="y"> -->
+</div>
+<button onclick="myFunction()">Try it</button>
+<script>
+function myFunction() {
+  document.getElementById("x","y").value = "16";
+}
+</script>
+
+<!-- 
+{% for questions in questions %}
+<div class="que">{{ questions.question_text }}&nbsp;<input id='bmi' type="number" ></div>{% endfor %}
+ --><!-- <div><br><input type="submit" id="bmi" value="Submit"></div> -->
+<!-- <input class="btn btn-default" type="submit" value="Submit"> -->
+<div>
+     <ul class="navbar-nav">
+        <!-- <li class="submit"><a class="nav-link" href="">SUBMIT</a></li> -->
+        <li class="go-home"><a class="nav-link" href="{% url 'list_of_index' %}">Go Home</a></li>
+    </ul>
+</div>
+</body>
+</html>
